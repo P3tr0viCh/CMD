@@ -1,7 +1,8 @@
 @ECHO OFF
 
 IF "%~1" == "" (
-	ECHO "Usage: %~nx0 file-name.exe"
+	ECHO Usage: %~nx0 file-name.exe [/IEC]
+	ECHO 	/IEC	Include file-name.exe.config ^(with Assembly Binding Redirect^)
 	
 	EXIT /B 1
 )
@@ -52,6 +53,8 @@ XCOPY /Y /Q /I "%PROGRAM_STARTER_PATH%" "%TMP%\%PROGRAM_NAME%"
 
 XCOPY /Y /Q /S %PROGRAM_PATH%*.exe "%TMP%\%PROGRAM_NAME%\%VERSION%"
 XCOPY /Y /Q /S %PROGRAM_PATH%*.dll "%TMP%\%PROGRAM_NAME%\%VERSION%"
+
+IF "%~2"=="/IEC" XCOPY /Y /Q /I "%PROGRAM_PATH%*.exe.config" "%TMP%\%PROGRAM_NAME%\%VERSION%"
 
 %ZIP_PATH% a -aoa -mx=9 %OUTPUT_FILE% "%TMP%\%PROGRAM_NAME%"
 
