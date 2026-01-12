@@ -24,7 +24,7 @@ SET ZIP_NAME=latest.zip
 SET OUTPUT_FILE=%OUTPUT_PATH%latest.zip
 SET OUTPUT_VERSION_FILE=%OUTPUT_PATH%version
 
-SET PROGRAM_STARTER_PATH="C:\docs\Projects.exe\ProgramStart\Release.%PROGRAM_NAME%\%PROGRAM_NAME%.exe"
+SET PROGRAM_STARTER_PATH="D:\docs\Projects.exe\ProgramStart\Release.%PROGRAM_NAME%\%PROGRAM_NAME%.exe"
 
 ECHO Create zip for %PROGRAM_NAME%
 
